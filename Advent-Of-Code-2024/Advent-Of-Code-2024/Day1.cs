@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace AdventOfCode
+﻿namespace AdventOfCode
 {
     public class Day1 : IDay
     {
@@ -29,9 +27,9 @@ namespace AdventOfCode
             var right = new List<int>();
             for (int i = 0; i < lines.Length; i++)
             {
-                var numbers = Regex.Matches(lines[i], @"\d+");
-                left.Add(int.Parse(numbers[0].Value));
-                right.Add(int.Parse(numbers[1].Value));
+                var numbers = Utils.GetInts(lines[i]);
+                left.Add(numbers[0]);
+                right.Add(numbers[1]);
             }
             return (left, right);
         }
